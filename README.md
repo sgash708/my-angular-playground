@@ -1,3 +1,8 @@
 # my-angular-playground
 
-とにかく実装して慣れる。
+とにかく実装してangularに慣れる！
+
+# 技術
+- typescript
+- angular
+- ngrx
