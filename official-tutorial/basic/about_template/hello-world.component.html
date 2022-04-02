@@ -1,0 +1,18 @@
+<p>{{ message }}</p>
+
+<!-- プロパティバインディング可能 -->
+<!-- HTML要素のプロパティと属性の値を設定し、アプリケーションのプレゼンテーションロジックに値を渡すのに役立つ -->
+<!-- "[]"は、プロパティまたは属性をコンポーネントクラスの値にバインドしていること -->
+<p
+  [id]="sayHelloId"
+  [style.color]="fontColor">
+  You can set my color in the component!
+</p>
+
+<!-- 括弧内にイベント名を指定して、イベントリスナーを宣言する -->
+<!-- Componentの関数を呼び出す -->
+<button
+  [disabled]="canClick"
+  (click)="sayMessage()">
+  Trigger alert message
+</button>
