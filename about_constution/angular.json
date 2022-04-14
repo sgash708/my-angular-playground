@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "projects": {},
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  base: &base
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - type: bind
+        source: .
+        target: /frontend
+      - libs-cache:/frontend/dist
+      - /frontend/node_modules
+  # CI用
+  runner:
+    <<: *base
+    container_name: myrunner
+    command: /bin/sh
+  admin:
+    <<: *base
+    container_name: admin
+    ports: 
+      - "4100:4100"
+    restart: always
+    tty: true
+    networks:
+      - my_test_network
+    command:
+      - npx nxrun admin:serve --host 0.0.0.0 --disable-host-check
+networks:
+  my_test_network:
+
+volumes:
+  libs-cache:
+
